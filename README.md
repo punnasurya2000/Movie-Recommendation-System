@@ -64,3 +64,9 @@ The dataset used in this project is available on the [UCI Machine Learning Repos
 - Install Python libraries:
   ```bash
   pip install streamlit pandas
+  
+### **2. Install R libraries**
+- install.packages(c("recommenderlab", "dplyr", "reshape2", "proxy"))
+  
+### **3. Run the index.py**
+- streamlit run index.py
