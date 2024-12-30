@@ -1,16 +1,12 @@
 # Movie Recommendation System
 
-This project is designed to recommend movies to users using a combination of advanced recommendation algorithms. It implements User-Based Collaborative Filtering (UBCF), Item-Based Collaborative Filtering (IBCF), and Hybrid Recommendation Systems to predict user preferences and recommend movies accordingly. A web interface built with Streamlit enables users to interact with the system effortlessly.
+This project implements a **Movie Recommendation System** using collaborative filtering, content-based filtering, and hybrid algorithms to suggest movies based on user preferences. The backend is powered by R scripts, and a Streamlit web app serves as the frontend.
 
 ---
 
 ## **Overview**
 
-Recommendation systems are essential for personalization in applications like movie streaming platforms. This project uses collaborative filtering, content-based filtering, and hybrid models to suggest movies based on user preferences, past interactions, and movie features.
-
-The project includes:
-- **Backend**: R scripts for recommendation logic.
-- **Frontend**: A Streamlit web app for user interaction.
+Recommendation systems are critical for platforms like Netflix, Amazon Prime, and YouTube to personalize user experiences. This project combines multiple recommendation techniques to predict movies a user might enjoy based on their viewing history and preferences.
 
 ---
 
@@ -18,30 +14,53 @@ The project includes:
 
 1. **Recommendation Algorithms**:
    - **User-Based Collaborative Filtering (UBCF)**:
-     - Suggests movies based on user similarity.
+     - Suggests movies based on user similarities.
    - **Item-Based Collaborative Filtering (IBCF)**:
-     - Suggests movies similar to those already watched.
-   - **Hybrid Recommendation**:
-     - Combines UBCF, IBCF, and content-based techniques.
+     - Suggests movies based on movie similarities.
    - **Content-Based Filtering**:
      - Recommends movies with similar attributes (e.g., genres).
+   - **Hybrid Recommendation**:
+     - Combines UBCF, IBCF, and content-based techniques.
 
 2. **Streamlit Web Interface**:
-   - User-friendly interface for input and output.
-   - Allows users to select algorithms, input movie names, and specify the number of recommendations.
+   - A simple and interactive interface for input and output.
+   - Allows users to select algorithms, enter movie names, and specify the number of recommendations.
 
 3. **Dynamic Outputs**:
-   - Recommendations are displayed in the app and saved as CSV files.
+   - Displays recommendations directly in the app.
+   - Saves outputs as CSV files for offline analysis.
 
 ---
 
-## **Folder Structure**
+## **Dataset Information**
 
-```plaintext
-.
-├── index.py                # Main Streamlit app
-├── hybrid.R                # Hybrid recommendation logic
-├── ibcf_2.R                # Item-Based Collaborative Filtering logic
-├── ubcf_2.R                # User-Based Collaborative Filtering logic
-├── stratified_sample.csv   # Movie dataset (not provided here)
-├── README.md               # Documentation
+### **Dataset Source**
+The dataset used in this project is available on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/movies). It contains anonymized data about user demographics, movie ratings, and genres.
+
+### **Dataset Structure**
+- **Users**:
+  - Includes demographic details like age and gender.
+- **Movies**:
+  - Includes metadata such as genre, release year, and title.
+- **Ratings**:
+  - User ratings on a 1–5 scale for various movies.
+
+### **Features**
+| **Feature**      | **Description**                                  |
+|-------------------|--------------------------------------------------|
+| `user_id`         | Unique identifier for users                     |
+| `movie_id`        | Unique identifier for movies                    |
+| `rating`          | Rating given by the user (1–5 scale)            |
+| `timestamp`       | Date and time of the rating                     |
+| `genres`          | Genre(s) of the movie                           |
+| `title`           | Movie title                                     |
+
+---
+
+## **Setup Instructions**
+
+### **1. Prerequisites**
+- **Python** (>= 3.7) and **R** (>= 4.3.3).
+- Install Python libraries:
+  ```bash
+  pip install streamlit pandas
